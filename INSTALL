@@ -5,7 +5,7 @@ Installation
 1. Build links
 
 # assuming ceph build directory is at $HOME/ceph/build
-$ cd ceph-mtools
+$ cd ceph-menv
 $ ./build_links.sh
 
 A different ceph repository can be passed as the first argument to build_links.sh.
