@@ -4,32 +4,16 @@ Installation
 
 1. Build links
 
-# assuming ceph build directory is at $HOME/build/ceph
+# assuming ceph build directory is at $HOME/ceph/build
 $ cd ceph-mtools
-$ sh ./build_links.sh
+$ ./build_links.sh
 
+A different ceph repository can be passed as the first argument to build_links.sh.
 
-2. Add alias
+2. Configure shell environment
 
-To your shell startup script (such as $HOME/.bashrc) add:
+To your shell startup script (such as $HOME/.bashrc) add the following:
 
-alias mset='source ~/ceph-menv/mset.sh'
+source ~/ceph-menv/.menvrc
 
-3. Modify PATH
-
-Add path to ceph-menv/bin to PATH. It should precede any reference to $HOME/ceph/build/bin path.
-
-4. Modify PS1:
-
-Add references to $MRUN_PROMPT and potentially $MRUN_PROMPT_COLOR in PS1, for example:
-
-case "$TERM" in
-xterm-*color)
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[$MRUN_PROMPT_COLOR;1m\]${MRUN_PROMPT}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    ;;
-*)
-    PS1='${debian_chroot:+($debian_chroot)}${MRUN_PROMPT}\u@\h:\w\$ '
-    ;;
-esac
-
-
+(modify line appropriately if ceph-menv was installed at a different location)
